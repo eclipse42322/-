@@ -1,0 +1,47 @@
+import asyncio
+import logging
+
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+
+# --- Настройки ---
+BOT_TOKEN = "ВАШ_ТОКЕН_ОТ_BOTFATHER"  # вставьте сюда токен вашего бота
+
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
+
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Отправляет пользователю сообщения после команды /start: текст, фото, текст."""
+    chat_id = update.effective_chat.id
+
+    # Первое сообщение — текст
+    await context.bot.send_message(chat_id=chat_id, text="Привет! Это первое сообщение 👋")
+    await asyncio.sleep(1)  # небольшая пауза между сообщениями (необязательно)
+
+    # Второе сообщение — фото (из локального файла, должен лежать рядом со скриптом)
+    with open("photo.jpg", "rb") as photo_file:
+        await context.bot.send_photo(
+            chat_id=chat_id,
+            photo=photo_file,
+            caption="А это фото 📸",
+        )
+    await asyncio.sleep(1)
+
+    # Третье сообщение — текст
+    await context.bot.send_message(chat_id=chat_id, text="И третье, финальное сообщение ✅")
+
+
+def main() -> None:
+    application = Application.builder().token(BOT_TOKEN).build()
+
+    application.add_handler(CommandHandler("start", start))
+
+    print("Бот запущен. Нажмите Ctrl+C для остановки.")
+    application.run_polling()
+
+
+if __name__ == "__main__":
+    main()
