@@ -1,11 +1,12 @@
 import asyncio
 import logging
+import os
 
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # --- Настройки ---
-BOT_TOKEN = "ВАШ_ТОКЕН_ОТ_BOTFATHER"  # вставьте сюда токен вашего бота
+BOT_TOKEN = os.environ["BOT_TOKEN"]  # токен берётся из переменной окружения (Railway → Variables)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -26,7 +27,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await context.bot.send_photo(
             chat_id=chat_id,
             photo=photo_file,
-            caption="А вот и прайлистик))",
+            caption="а вот и прайслистик))",
         )
     await asyncio.sleep(1)
 
