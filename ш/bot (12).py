@@ -22,7 +22,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await asyncio.sleep(1)  # небольшая пауза между сообщениями (необязательно)
 
     # Второе сообщение — фото (из локального файла, должен лежать рядом со скриптом)
-    with open("photo.jpg", "rb") as photo_file:
+    with open("Дизайн без названия.png", "rb") as photo_file:
         await context.bot.send_photo(
             chat_id=chat_id,
             photo=photo_file,
