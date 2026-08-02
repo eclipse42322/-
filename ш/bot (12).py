@@ -5,7 +5,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # --- Настройки ---
-BOT_TOKEN = "7786772822:AAGO8i5-eNW0Q3sLZlHy8TTWdA6HvNAbQDU"  # вставьте сюда токен вашего бота
+BOT_TOKEN = "ВАШ_ТОКЕН_ОТ_BOTFATHER"  # вставьте сюда токен вашего бота
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -26,7 +26,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await context.bot.send_photo(
             chat_id=chat_id,
             photo=photo_file,
-            caption="Вот прайслист)))",
+            caption="А вот и прайлистик))",
         )
     await asyncio.sleep(1)
 
