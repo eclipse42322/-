@@ -32,7 +32,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await asyncio.sleep(1)
 
     # Третье сообщение — текст
-    await context.bot.send_message(chat_id=chat_id, text="вот мой юз зайка, пиши если интересно))     @Xnow_mtw")
+    await context.bot.send_message(chat_id=chat_id, text="вот мой юз зайка, пиши если интересно))     @Xnow_mtw      (напиши пожалуйста если ты с ботика пришел💘)")
 
 
 def main() -> None:
