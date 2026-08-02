@@ -18,7 +18,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
 
     # Первое сообщение — текст
-    await context.bot.send_message(chat_id=chat_id, text="Привет! Это первое сообщение 👋")
+    await context.bot.send_message(chat_id=chat_id, text="Привет, я ксюша, стану твоей личной шлюшкой за деньги. Ну смотря сколько заплатишь))")
     await asyncio.sleep(1)  # небольшая пауза между сообщениями (необязательно)
 
     # Второе сообщение — фото (из локального файла, должен лежать рядом со скриптом)
@@ -31,7 +31,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await asyncio.sleep(1)
 
     # Третье сообщение — текст
-    await context.bot.send_message(chat_id=chat_id, text="И третье, финальное сообщение ✅")
+    await context.bot.send_message(chat_id=chat_id, text="вот мой юз зайка, пиши нсли интересно)) 
+
+@Xnow_mtw")
 
 
 def main() -> None:
