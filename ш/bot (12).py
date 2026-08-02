@@ -26,7 +26,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await context.bot.send_photo(
             chat_id=chat_id,
             photo=photo_file,
-            caption="А это фото 📸",
+            caption="Вот прайслист)))",
         )
     await asyncio.sleep(1)
 
